@@ -5,14 +5,14 @@ api-version: 1.18
 author: evlad
 description: AdvancementsMenu
 commands:
-  success:
-    description: Success
+  advancements:
+    description: Opens Advancements Menu
     usage: /<command>
-    permission: success.open
+    permission: advancementsmenu.open
     aliases:
     - succes
-    - advancements
+    - success
 permissions:
-  success.open:
+  advancementsmenu.open:
     description: Open advancements menu
     default: true
