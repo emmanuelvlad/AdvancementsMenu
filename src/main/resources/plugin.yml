@@ -1,0 +1,18 @@
+name: AdvancementsMenu
+version: '${project.version}'
+main: me.evlad.advancementsmenu.AdvancementsMenu
+api-version: 1.18
+author: evlad
+description: AdvancementsMenu
+commands:
+  success:
+    description: Success
+    usage: /<command>
+    permission: success.open
+    aliases:
+    - succes
+    - advancements
+permissions:
+  success.open:
+    description: Open advancements menu
+    default: true
