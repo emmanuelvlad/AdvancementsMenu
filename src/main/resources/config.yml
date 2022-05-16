@@ -1,0 +1,20 @@
+gui:
+  title: Advancements
+  done: §aDone at [date]
+  back: §cBack
+  previous: §7Previous
+  next: §7Next
+  advancement-title: §e[title]
+  advancement-description: §7[description]
+misc:
+  #
+  # Mostly used for month and day names
+  #
+  # Examples of valid locales:
+  # en; en_GB; en_US; fr; fr_FR
+  #
+  locale: en_US
+  #
+  # USE '' TO DISPLAY RAW TEXT
+  #
+  date-formatting: 'MMM d YYYY ''at'' hh:mm'

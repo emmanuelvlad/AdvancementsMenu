@@ -3,7 +3,11 @@ package me.evlad.advancementsmenu.utils;
 import java.util.HashMap;
 import java.util.List;
 
+import org.bukkit.entity.Player;
 import org.bukkit.advancement.Advancement;
+import org.bukkit.advancement.AdvancementProgress;
+
+import me.croabeast.advancementinfo.AdvancementInfo;
 
 public class AdvancementType extends HashMap<String, AdvancementInfo> {
 	public boolean isRoot;
@@ -29,5 +33,9 @@ public class AdvancementType extends HashMap<String, AdvancementInfo> {
 			return;
 		this.isRoot = splitPath[1].equals("root");
 		this.isTab = splitPath.length == 2 && isRoot;
+	}
+
+	public AdvancementProgress getPlayerProgress(Player player) {
+		return player.getAdvancementProgress(this.advancement);
 	}
 }

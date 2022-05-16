@@ -7,6 +7,7 @@ import me.evlad.advancementsmenu.commands.AdvancementsMenuCommand;
 public final class AdvancementsMenu extends JavaPlugin {
 	@Override
 	public void onEnable() {
+		this.saveDefaultConfig();
 		getCommand("advancements").setExecutor(new AdvancementsMenuCommand(this));
 	}
 

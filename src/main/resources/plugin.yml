@@ -13,6 +13,16 @@ commands:
     - succes
     - success
 permissions:
+  advancementsmenu.*:
+    description: Access all commands
+    default: op
+    children:
+      advancementsmenu.open: true
   advancementsmenu.open:
     description: Open advancements menu
     default: true
+    children:
+      advancementsmenu.open.player: true
+  advancementsmenu.open.player:
+    description: Open advancements menu for player
+    default: op
