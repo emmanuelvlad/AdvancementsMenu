@@ -25,5 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: Set up JDK 1.17
+        uses: actions/setup-java@v3.3.0
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
       - name: Compile Minecraft Spigot or Paper (BuildTools)
         uses: SpraxDev/Action-SpigotMC@v4.0.0
