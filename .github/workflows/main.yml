@@ -30,6 +30,12 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-
-      - name: Compile Minecraft Spigot or Paper (BuildTools)
-        uses: SpraxDev/Action-SpigotMC@v4.0.0
+          cache: 'maven'
+      - name: Build
+        run: mvn install
+      - run: mkdir artifacts && cp target/*.jar artifacts
+      - name: Save artifacts
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Plugin
+          path: artifacts
