@@ -35,7 +35,7 @@ jobs:
         run: mvn install
       - run: mkdir artifacts && cp target/*.jar artifacts
       - name: Save artifacts
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: Plugin
           path: artifacts
