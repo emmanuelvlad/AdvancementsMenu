@@ -3,6 +3,7 @@ package me.evlad.advancementsmenu.utils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.bukkit.Bukkit;
 import org.bukkit.advancement.Advancement;
@@ -26,15 +27,18 @@ public class AdvancementTabs {
 			
 			type.childrens = all.stream().filter((type2) -> {
 				return type.namespace.equals(type2.namespace) && type2.name.equals(type.name) && !type2.path.equals(type.path);
-			}).toList();
+			}).collect(Collectors.toList());
 
 			return true;
-		}).toList();
+		}).collect(Collectors.toList());
 	}
 
 	public List<AdvancementType> getTabs() {
 		return tabs.stream().filter((tab) -> {
 			String[][] requirements = tab.info.getRequirements();
+			if (requirements == null)
+				return false;
+
 			boolean isImpossible = false;
 
 			for (String [] parent : requirements) {
@@ -44,7 +48,7 @@ public class AdvancementTabs {
 			}
 
 			return !isImpossible;
-		}).toList();
+		}).collect(Collectors.toList());
 	}
 
 	public List<AdvancementType> getAllTabs() {
